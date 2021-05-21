@@ -1365,6 +1365,7 @@
    var doc = document;
    var $html = $('html');
    var $body = $('body');
+   var namespace = '.w-webflow-badge';
    var location = window.location;
    var isPhantom = /PhantomJS/i.test(navigator.userAgent);
    var fullScreenEvents = 'fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange';
@@ -1393,12 +1394,12 @@
    }
  
    function createBadge() {
-     var $brand = $('').attr('', '');
-     var $logoArt = $('').attr('', '').attr('', '').css({
+     var $brand = $('').attr('href', '');
+     var $logoArt = $('<img>').attr('src', '').attr('alt', '').css({
        marginRight: '8px',
        width: '16px'
      });
-     var $logoText = $('').attr('', '').attr('', '');
+     var $logoText = $('<img>').attr('src', '').attr('alt', '');
      $brand.append($logoArt, $logoText);
      return $brand[0];
    }
